@@ -11,6 +11,11 @@ function caculateDelivery() {
 
     // Destination fee
     let destinationFee = 0;
+      // ✅ Validation for weight
+    if (weight < 1) {
+        document.getElementById("result").textContent = "❌ Please enter a valid weight (1kg or more).";
+        return; // stop calculation
+    }
 
     if (destination === "Manitoba") {
         destinationFee = 3000;
@@ -37,11 +42,12 @@ function caculateDelivery() {
         destinationFee = 3000;
     }
 
-    // Overweight fee (if > 5kg)
-    let overweightFee = 0;
+
+   let overweightFee = 0;
     if (weight > 5) {
-        overweightFee = 1500;
+    overweightFee = (weight - 5) * 1500;
     }
+
 
     // Total cost
     let totalCost = baseCost + destinationFee + overweightFee;
