@@ -1,5 +1,4 @@
 // calc.js
-
 function caculateDelivery() {
     // Get values from the form
     let weight = parseFloat(document.getElementById("weight").value);
@@ -11,7 +10,7 @@ function caculateDelivery() {
 
     // Destination fee
     let destinationFee = 0;
-      // ✅ Validation for weight
+      // Validation for weight
     if (weight < 1) {
         document.getElementById("result").textContent = "❌ Please enter a valid weight (1kg or more).";
         return; // stop calculation
